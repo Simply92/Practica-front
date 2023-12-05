@@ -1,7 +1,6 @@
 import { Container, Typography, Box } from "@mui/material";
 import { AccessTimeFilled, Room, Email, Phone, Copyright, Inventory, SupportAgent, ShoppingCart, Language } from '@mui/icons-material';
 
-
 const FooterComponents = () => {
   const boxStyle = {
     backgroundColor: "#000",
@@ -20,6 +19,7 @@ const FooterComponents = () => {
     color: "#fff",
     padding: "30px",
   }
+
   const boxStyleThree = {
     color: "#fff",
     display: "flex",
@@ -35,52 +35,56 @@ const FooterComponents = () => {
     padding: "0 0 30px 0"
   };
 
+  const sectionInformation = [{
+    title: "INFORMACION",
+    items: [
+      { icon: Phone, text: "+54 11 2256-8888" },
+      { icon: Room, text: "Calle Falsa 123 - Buenos Aires" },
+      { icon: Email, text: "contacto@hypermegared.com.ar" },
+      { icon: AccessTimeFilled, text: "Lunes a Viernes: 10 a 14hs y 17 a 20hs | Sábados: 10 a 14hs." },
+    ]
+  }]
+
+  const sectionPages = [{
+    title: "PAGINAS",
+    items: [
+      { icon: Language, text: "INICIO" },
+      { icon: Inventory, text: "PRODUCTOS" },
+      { icon: ShoppingCart, text: "TIENDA" },
+      { icon: SupportAgent, text: "SOPORTE" },
+    ]
+  }]
+
   return (
     <>
       <Box style={boxStyle}>
         <Box style={boxStyleOne}>
-          <Container>
-            <Box style={boxStyleTwo}>
-              <Typography variant="h5" sx={{ fontWeight: "800", marginBottom: "25px" }}>INFORMACION</Typography>
-              <Box sx={{ display: "flex", marginBottom: "10px" }}>
-                <Phone sx={{ color: "#fd611a", marginRight: "10px" }} />
-                <Typography> +54 112256-8888</Typography>
+          {sectionInformation.map((section, index) => (
+            <Container key={index}>
+              <Box style={boxStyleTwo}>
+                <Typography variant="h5" sx={{ fontWeight: "800", marginBottom: "25px" }}>{section.title}</Typography>
+                {section.items.map((item, i) => (
+                  <Box key={i} sx={{ display: "flex", marginBottom: "10px" }}>
+                    {item.icon && <item.icon sx={{ color: "#fd611a", marginRight: "10px" }} />}
+                    <Typography>{item.text}</Typography>
+                  </Box>
+                ))}
               </Box>
-              <Box sx={{ display: "flex", marginBottom: "10px" }}>
-                <Room sx={{ color: "#fd611a", marginRight: "10px" }} />
-                <Typography> Calle Falsa 123 - Buenos Aires</Typography>
+            </Container>
+          ))}
+          {sectionPages.map((section, index) => (
+            <Container key={index}>
+              <Box style={boxStyleThree}>
+                <Typography variant="h5" sx={{ fontWeight: "800", marginBottom: "25px" }}>{section.title}</Typography>
+                {section.items.map((item, i) => (
+                  <Box key={i} sx={{ display: "flex", marginBottom: "10px" }}>
+                    <Typography sx={{ marginRight: "10px" }}>{item.text}</Typography>
+                    {item.icon && <item.icon sx={{ color: "#fd611a" }} />}
+                  </Box>
+                ))}
               </Box>
-              <Box sx={{ display: "flex", marginBottom: "10px" }}>
-                <Email sx={{ color: "#fd611a", marginRight: "10px" }} />
-                <Typography> contacto@hypermegared.com.ar</Typography>
-              </Box>
-              <Box sx={{ display: "flex", marginBottom: "10px" }}>
-                <AccessTimeFilled sx={{ color: "#fd611a", marginRight: "10px" }} />
-                <Typography> Lunes a Viernes: 10 a 14hs y 17 a 20hs | Sábados: 10 a 14hs.</Typography>
-              </Box>
-            </Box>
-          </Container>
-          <Container>
-            <Box style={boxStyleThree}>
-              <Typography variant="h5" sx={{ fontWeight: "800", marginBottom: "25px" }}>PAGINAS</Typography>
-              <Box sx={{ display: "flex", marginBottom: "10px" }}>
-                <Typography sx={{ marginRight: "10px" }}>INICIO</Typography>
-                <Language sx={{ color: "#fd611a" }} />
-              </Box>
-              <Box sx={{ display: "flex", marginBottom: "10px" }}>
-                <Typography sx={{ marginRight: "10px" }}>PRODUCTOS</Typography>
-                <Inventory sx={{ color: "#fd611a" }} />
-              </Box>
-              <Box sx={{ display: "flex", marginBottom: "10px" }}>
-                <Typography sx={{ marginRight: "10px" }}>TIENDA</Typography>
-                <ShoppingCart sx={{ color: "#fd611a" }} />
-              </Box>
-              <Box sx={{ display: "flex", marginBottom: "10px" }}>
-                <Typography sx={{ marginRight: "10px" }}>SOPORTE</Typography>
-                <SupportAgent sx={{ color: "#fd611a" }} />
-              </Box>
-            </Box>
-          </Container>
+            </Container>
+          ))}
         </Box>
       </Box>
       <Box style={boxStyleCopyright}>
