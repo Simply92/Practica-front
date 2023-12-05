@@ -1,11 +1,14 @@
-import ResponsiveAppBar from "./componets/NavBar/NavBar";
-import SearchAppBar from "./componets/searchBar/SearchBar"
+import SearchBar from "./views/SearchBar/SearchBar.view"
+import NavBar from "./views/NavBar/NavBar.view"
+import Footer from "./views/Footer/Footer.views";
+
 
 function App() {
   return (
     <>
-      <SearchAppBar/>
-      <ResponsiveAppBar/>
+      <SearchBar />
+      <NavBar />
+      <Footer />
     </>
   );
 }

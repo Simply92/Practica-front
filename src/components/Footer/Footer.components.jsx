@@ -3,16 +3,16 @@ import { AccessTimeFilled, Room, Email, Phone, Copyright, Inventory, SupportAgen
 
 
 const FooterComponents = () => {
-
   const boxStyle = {
     backgroundColor: "#000",
+    width: "100vw",
     height: "300px",
     display: "flex",
-    padding: "20px 150px",
+    padding: "20px 180px",
   };
 
   const boxStyleOne = {
-    width: "100%",
+    width: "100vw",
     display: "flex",
   };
 
