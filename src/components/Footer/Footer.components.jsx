@@ -2,6 +2,26 @@ import { Container, Typography, Box } from "@mui/material";
 import { AccessTimeFilled, Room, Email, Phone, Copyright, Inventory, SupportAgent, ShoppingCart, Language } from '@mui/icons-material';
 
 const FooterComponents = () => {
+  const sectionInformation = [{
+    title: "INFORMACION",
+    items: [
+      { icon: Phone, text: "+54 11 2256-8888" },
+      { icon: Room, text: "Calle Falsa 123 - Buenos Aires" },
+      { icon: Email, text: "contacto@hypermegared.com.ar" },
+      { icon: AccessTimeFilled, text: "Lunes a Viernes: 10 a 14hs y 17 a 20hs | Sábados: 10 a 14hs." },
+    ]
+  }];
+
+  const sectionPages = [{
+    title: "PAGINAS",
+    items: [
+      { icon: Language, text: "INICIO" },
+      { icon: Inventory, text: "PRODUCTOS" },
+      { icon: ShoppingCart, text: "TIENDA" },
+      { icon: SupportAgent, text: "SOPORTE" },
+    ]
+  }];
+
   const boxStyle = {
     backgroundColor: "#000",
     width: "100vw",
@@ -34,26 +54,6 @@ const FooterComponents = () => {
     justifyContent: "center",
     padding: "0 0 30px 0"
   };
-
-  const sectionInformation = [{
-    title: "INFORMACION",
-    items: [
-      { icon: Phone, text: "+54 11 2256-8888" },
-      { icon: Room, text: "Calle Falsa 123 - Buenos Aires" },
-      { icon: Email, text: "contacto@hypermegared.com.ar" },
-      { icon: AccessTimeFilled, text: "Lunes a Viernes: 10 a 14hs y 17 a 20hs | Sábados: 10 a 14hs." },
-    ]
-  }]
-
-  const sectionPages = [{
-    title: "PAGINAS",
-    items: [
-      { icon: Language, text: "INICIO" },
-      { icon: Inventory, text: "PRODUCTOS" },
-      { icon: ShoppingCart, text: "TIENDA" },
-      { icon: SupportAgent, text: "SOPORTE" },
-    ]
-  }]
 
   return (
     <>
